@@ -42,6 +42,7 @@ fun HalamanSatu(
 {
     var rasaYgDipilih by rememberSaveable{ mutableStateOf("") }
     var textJmlBeli by remember{ mutableStateOf("") }
+    var isConfirmButtonClicked by remember { mutableStateOf(false) }
 
     Column(modifier = modifier,
         verticalArrangement = Arrangement.SpaceBetween){
@@ -86,8 +87,9 @@ fun HalamanSatu(
                     }
                 )
                 Button(modifier = Modifier.weight(1f),
-                    enabled = textJmlBeli.isNotEmpty(),
-                    onClick = { onConfirmButtonClicked(textJmlBeli.toInt()) }
+                    enabled = textJmlBeli.isNotEmpty() && !isConfirmButtonClicked,
+                    onClick = { onConfirmButtonClicked(textJmlBeli.toInt())
+                    isConfirmButtonClicked = true}
                 ) {
                     Text(stringResource(R.string.confirm))
                 }
@@ -110,7 +112,7 @@ fun HalamanSatu(
                 }
                 Button(
                     modifier = Modifier.weight(1f),
-                    enabled = textJmlBeli.isNotEmpty(),
+                    enabled = textJmlBeli.isNotEmpty() && isConfirmButtonClicked,
                     onClick = onNextButtonClicked
                 ){
                     Text(stringResource(id = R.string.next))
