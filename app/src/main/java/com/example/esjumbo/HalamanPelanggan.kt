@@ -93,7 +93,10 @@ fun HalamanPelanggan(
             OutlinedButton(modifier = Modifier.weight(1f), onClick = onCancelButtonClicked) {
                 Text(stringResource(R.string.cancel))
             }
-            Button(modifier = Modifier.weight(1f), onClick = { onNextButtonClicked(listData) }) {
+            Button(
+                modifier = Modifier.weight(1f),
+                enabled = nama.isNotEmpty() && noHp.isNotEmpty() && alamat.isNotEmpty(),
+                onClick = { onNextButtonClicked(listData) }) {
                 Text(text = stringResource(id = R.string.next))
             }
         }
