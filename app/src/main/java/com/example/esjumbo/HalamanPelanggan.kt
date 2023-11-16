@@ -18,7 +18,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -35,6 +37,9 @@ fun HalamanPelanggan(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
+        Text(text = stringResource(id = R.string.judul),
+            fontSize = 30.sp,
+            fontWeight = FontWeight.Bold )
         OutlinedTextField(
             value = nama,
             onValueChange = { nama = it },

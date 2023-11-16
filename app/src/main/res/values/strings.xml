@@ -18,4 +18,5 @@
     <string name="nama">Nama</string>
     <string name="no">No HP</string>
     <string name="alamat">Alamat</string>
+    <string name="judul">Data Pelanggan</string>
 </resources>
