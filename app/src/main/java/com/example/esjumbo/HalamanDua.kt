@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.OutlinedButton
@@ -43,8 +44,8 @@ fun HalamanDua(
         ) {
             items.forEach{item->
             Column{
-                Text(item.first.uppercase())
-                Text(text = item.second.toString(), fontWeight = FontWeight.Bold)
+                Text(item.first.uppercase(), fontWeight = FontWeight.Bold)
+                Text(text = item.second.toString())
             }
                 Divider(thickness = dimensionResource(R.dimen.thickness_divider))
             }
