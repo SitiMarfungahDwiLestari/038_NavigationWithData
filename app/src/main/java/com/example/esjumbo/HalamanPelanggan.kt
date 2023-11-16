@@ -90,7 +90,8 @@ fun HalamanPelanggan(
         Spacer(modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)))
         Row(
             modifier = Modifier
-                .padding(dimensionResource(R.dimen.padding_medium))
+                .fillMaxWidth()
+                .padding(50.dp)
                 .weight(1f, false),
             horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
             verticalAlignment = Alignment.Bottom
