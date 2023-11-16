@@ -47,6 +47,7 @@ fun HalamanPelanggan(
             fontWeight = FontWeight.Bold )
         Spacer(modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)))
         OutlinedTextField(
+            placeholder = { Text("Masukkan Nama") },
             value = nama,
             onValueChange = { nama = it },
             label = {
@@ -58,6 +59,7 @@ fun HalamanPelanggan(
             })
         Spacer(modifier = Modifier.padding(dimensionResource(R.dimen.padding_small)))
         OutlinedTextField(
+            placeholder = { Text("Masukkan Nomor HP") },
             value = noHp,
             onValueChange = { noHp = it },
             label = {
@@ -69,6 +71,7 @@ fun HalamanPelanggan(
             })
         Spacer(modifier = Modifier.padding(dimensionResource(R.dimen.padding_small)))
         OutlinedTextField(
+            placeholder = { Text("Masukkan Alamat") },
             value = alamat,
             onValueChange = { alamat = it },
             label = {
