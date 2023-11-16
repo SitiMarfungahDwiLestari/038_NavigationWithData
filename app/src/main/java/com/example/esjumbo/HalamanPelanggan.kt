@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedButton
@@ -23,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -49,6 +51,7 @@ fun HalamanPelanggan(
         OutlinedTextField(
             placeholder = { Text("Masukkan Nama") },
             value = nama,
+            singleLine = true,
             onValueChange = { nama = it },
             label = {
                 Text(
@@ -61,6 +64,8 @@ fun HalamanPelanggan(
         OutlinedTextField(
             placeholder = { Text("Masukkan Nomor HP") },
             value = noHp,
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             onValueChange = { noHp = it },
             label = {
                 Text(
@@ -73,6 +78,7 @@ fun HalamanPelanggan(
         OutlinedTextField(
             placeholder = { Text("Masukkan Alamat") },
             value = alamat,
+            singleLine = true,
             onValueChange = { alamat = it },
             label = {
                 Text(
