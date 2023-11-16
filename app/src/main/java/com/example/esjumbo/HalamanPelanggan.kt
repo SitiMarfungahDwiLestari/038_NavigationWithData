@@ -17,6 +17,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -40,6 +41,7 @@ fun HalamanPelanggan(
         Text(text = stringResource(id = R.string.judul),
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold )
+        Spacer(modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)))
         OutlinedTextField(
             value = nama,
             onValueChange = { nama = it },
@@ -50,6 +52,7 @@ fun HalamanPelanggan(
                     )
                 )
             })
+        Spacer(modifier = Modifier.padding(dimensionResource(R.dimen.padding_small)))
         OutlinedTextField(
             value = noHp,
             onValueChange = { noHp = it },
@@ -60,6 +63,7 @@ fun HalamanPelanggan(
                     )
                 )
             })
+        Spacer(modifier = Modifier.padding(dimensionResource(R.dimen.padding_small)))
         OutlinedTextField(
             value = alamat,
             onValueChange = { alamat = it },
@@ -70,7 +74,7 @@ fun HalamanPelanggan(
                     )
                 )
             })
-        Spacer(modifier = Modifier.padding(16.dp))
+        Spacer(modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)))
         Button(onClick = { onNextButtonClicked(listData) }) {
             Text(text = stringResource(id = R.string.next))
         }
