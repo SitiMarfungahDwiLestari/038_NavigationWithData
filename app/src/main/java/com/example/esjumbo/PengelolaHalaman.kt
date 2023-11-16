@@ -26,13 +26,17 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.esjumbo.data.SumberData.flavor
+import com.example.esjumbo.data.OrderUIState
+
 
 enum class PengelolaHalaman{
     Home,
+    Cust,
     Rasa,
     Summary
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EsJumboAppBar(
     bisaNavigasiBack: Boolean,
@@ -76,10 +80,17 @@ fun EsJumboApp(
             composable (route = PengelolaHalaman.Home.name){
                 HalamanHome (
                     onNextButtonClicked = {
-                        navController.navigate(PengelolaHalaman.Rasa.name)
+                        navController.navigate(PengelolaHalaman.Cust.name)
                     }
                 )
             }
+            composable(route = PengelolaHalaman.Cust.name){
+                HalamanPelanggan(onNextButtonClicked = {
+                    viewModel.setContact(it)
+                    navController.navigate(PengelolaHalaman.Rasa.name)
+                })
+            }
+
             composable(route = PengelolaHalaman.Rasa.name){
                 val context = LocalContext.current
                 HalamanSatu(

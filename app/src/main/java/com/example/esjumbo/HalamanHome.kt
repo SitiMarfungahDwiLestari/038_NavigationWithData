@@ -32,7 +32,7 @@ import com.example.esjumbo.ui.theme.theme.EsJumboTheme
 fun HalamanHome(
     onNextButtonClicked: () -> Unit)
 {
-    val image = painterResource(id = R.drawable.esteh)
+    val image = painterResource(id = R.drawable.foto)
     Column(modifier = Modifier,
         verticalArrangement = Arrangement.SpaceBetween){
         OutlinedCard(
