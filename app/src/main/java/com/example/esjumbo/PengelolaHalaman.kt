@@ -85,12 +85,19 @@ fun EsJumboApp(
                 )
             }
             composable(route = PengelolaHalaman.Cust.name){
-                HalamanPelanggan(onNextButtonClicked = {
+                HalamanPelanggan(
+                    onNextButtonClicked = {
                     viewModel.setContact(it)
-                    navController.navigate(PengelolaHalaman.Rasa.name)
-                })
-            }
+                    navController.navigate(PengelolaHalaman.Rasa.name)},
+                    onCancelButtonClicked = {
+                        cancelOrderAndNavigateToHome(
+                            viewModel,
+                            navController
+                        )
+                    }
 
+                )
+            }
             composable(route = PengelolaHalaman.Rasa.name){
                 val context = LocalContext.current
                 HalamanSatu(
@@ -127,4 +134,6 @@ private fun cancelOrderAndNavigateToRasa(
 ){
     navController.popBackStack(PengelolaHalaman.Rasa.name, inclusive = false)
 }
+
+
 
